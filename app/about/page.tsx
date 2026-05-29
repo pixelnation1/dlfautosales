@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
 import { PageCTA } from "@/components/shared/PageCTA";
 import { TrustSection } from "@/components/home/TrustSection";
+import { ReviewsSection } from "@/components/shared/ReviewsSection";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { ROUTES } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
@@ -68,6 +69,8 @@ export default function AboutPage() {
       </section>
 
       <TrustSection />
+
+      <ReviewsSection background="light-gray" />
 
       <PageCTA
         title="Experience the DLF Difference"

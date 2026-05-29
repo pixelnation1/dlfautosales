@@ -12,6 +12,7 @@ import { VehicleGallery } from "./VehicleGallery";
 import { VehicleCard } from "./VehicleCard";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { PageCTA } from "@/components/shared/PageCTA";
+import { ReviewsSection } from "@/components/shared/ReviewsSection";
 import { PaymentCalculator } from "@/components/PaymentCalculator";
 import { FinancingPreQualificationForm } from "@/components/forms/FinancingPreQualificationForm";
 import { FINANCING_PRE_QUALIFY_HASH } from "@/lib/financing/constants";
@@ -218,6 +219,8 @@ export function VehicleDetailContent({ vehicle }: VehicleDetailContentProps) {
           </div>
         </section>
       )}
+
+      <ReviewsSection background="light-gray" limit={3} />
 
       <PageCTA
         title={`Ready to Drive This ${vehicle.make}?`}

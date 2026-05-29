@@ -3,6 +3,7 @@ import { PageHero } from "@/components/shared/PageHero";
 import { ContactInfo } from "@/components/shared/ContactInfo";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { FAQ } from "@/components/shared/FAQ";
+import { ReviewsSection } from "@/components/shared/ReviewsSection";
 import { PageCTA } from "@/components/shared/PageCTA";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { contactFaqs } from "@/lib/data/faqs";
@@ -41,6 +42,8 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
           </div>
         </div>
       </section>
+
+      <ReviewsSection background="white" />
 
       <FAQ
         title="Contact & Visit Questions"

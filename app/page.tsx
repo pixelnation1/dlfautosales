@@ -3,7 +3,7 @@ import { FeaturedInventoryPreview } from "@/components/home/FeaturedInventoryPre
 import { FinancingPreview } from "@/components/home/FinancingPreview";
 import { WhyChoose } from "@/components/home/WhyChoose";
 import { TradeInPreview } from "@/components/home/TradeInPreview";
-import { Reviews } from "@/components/home/Reviews";
+import { ReviewsSection } from "@/components/shared/ReviewsSection";
 import { PageCTA } from "@/components/shared/PageCTA";
 
 export default function Home() {
@@ -14,7 +14,7 @@ export default function Home() {
       <FinancingPreview />
       <WhyChoose />
       <TradeInPreview />
-      <Reviews />
+      <ReviewsSection background="white" />
       <PageCTA />
     </>
   );

@@ -9,6 +9,9 @@ export const SITE = {
   hours: "Mon–Fri 9am–6pm · Sat 9am–4pm · Sun Closed",
   mapsQuery: "Emporia+KS+used+car+dealership",
   url: "https://www.dlfautos.com",
+  /** Replace with your Google Business Profile reviews URL when ready */
+  googleReviewsUrl:
+    "https://www.google.com/maps/search/?api=1&query=DLF+Auto+Sales+Emporia+KS",
 } as const;
 
 export const ROUTES = {
