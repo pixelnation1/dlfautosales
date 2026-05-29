@@ -23,6 +23,10 @@ export const ROUTES = {
   tradeIn: "/trade-in",
   about: "/about",
   contact: "/contact",
+  areasWeServe: "/areas-we-serve",
+  knowledge: "/knowledge",
+  /** Legacy alias — redirects to knowledge hub */
+  blog: "/blog",
 } as const;
 
 export const NAV_LINKS = [
