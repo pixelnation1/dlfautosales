@@ -3,78 +3,76 @@ export type Review = {
   name: string;
   rating: number;
   text: string;
-  /** Display date, e.g. "March 2026" or "Recent Customer" */
-  dateLabel: string;
+  /** Display label under reviewer name */
+  dateLabel?: string;
   vehiclePurchased?: string;
 };
 
+/** Verified customer reviews for DLF Auto Sales */
 export const reviews: Review[] = [
   {
-    id: "1",
-    name: "Marcus T.",
+    id: "manny",
+    name: "Manny",
     rating: 5,
-    dateLabel: "March 2026",
-    vehiclePurchased: "2020 Ford F-150",
-    text: "Found a great truck and got approved the same day. No pressure, straight answers, and they worked with my budget. Best used car dealership near me in Emporia.",
+    dateLabel: "Verified Customer",
+    text: "I went over the summer because he had a car we were interested in. The guy I spoke with was very kind and let me look at the car and test drive it. He is a newer business but will go out of his way to help you out. He can even secure financing for your purchase and is also willing to negotiate and help you get into a vehicle.",
   },
   {
-    id: "2",
-    name: "Sarah L.",
+    id: "mariana-cerda",
+    name: "Mariana Cerda",
     rating: 5,
-    dateLabel: "February 2026",
-    vehiclePurchased: "2019 Toyota Camry",
-    text: "Traded in my old car and drove home in a Camry I love. Financing was easy even with less-than-perfect credit. Highly recommend DLF Auto Sales.",
+    dateLabel: "Verified Customer",
+    text: "Great business and staff. People are very kind and understanding. There is a great variety of reliable vehicles to choose from. Carlos and his team are always willing to help anyone out. They also speak Spanish.",
   },
   {
-    id: "3",
-    name: "James R.",
+    id: "lucas-chituck",
+    name: "Lucas Chituck",
     rating: 5,
-    dateLabel: "January 2026",
-    vehiclePurchased: "2018 Honda CR-V",
-    text: "Local dealer that actually cares. Clean inventory, fair pricing, and they explained every step. Will send friends looking for used cars in Emporia KS.",
+    dateLabel: "Verified Customer",
+    vehiclePurchased: "Jeep Liberty",
+    text: "Bought a Jeep Liberty from Carlos. He met my expectations completely. The vehicle was spotless, ran and drove well, and the price was well below average. Carlos was incredibly kind and always quick to communicate. I would absolutely recommend DLF Auto Sales for a used car in Emporia.",
   },
   {
-    id: "4",
-    name: "Kimberly W.",
+    id: "nayeli-escobar",
+    name: "Nayeli Escobar",
     rating: 5,
-    dateLabel: "Recent Customer",
-    vehiclePurchased: "2021 Chevrolet Equinox",
-    text: "First time buying on my own and they made it simple. No judgment about my credit — just real options and a payment I could afford.",
+    dateLabel: "Verified Customer",
+    text: "Went to visit because I was thinking of buying a new car and they were really nice and welcoming. Would recommend them if you're looking for an affordable vehicle.",
   },
   {
-    id: "5",
-    name: "David M.",
+    id: "valentina-fuentes",
+    name: "Valentina Fuentes",
     rating: 5,
-    dateLabel: "Recent Customer",
-    vehiclePurchased: "2022 Hyundai Tucson",
-    text: "Upgraded our family SUV without the runaround. Fair trade-in value and a smooth buying experience from start to finish.",
-  },
-  {
-    id: "6",
-    name: "Angela P.",
-    rating: 5,
-    dateLabel: "December 2025",
-    vehiclePurchased: "2017 Nissan Altima",
-    text: "Honest people, clean lot, and they stood behind what they sold. Exactly what you want from a used car dealership in Emporia.",
+    dateLabel: "Verified Customer",
+    text: "Great people to work with. Very easy to negotiate and they adjust to your needs. Owners are very kind and friendly. I would definitely recommend them.",
   },
 ];
 
-/** Update when live Google review data is connected */
 export const REVIEW_AGGREGATE = {
-  ratingValue: 4.9,
-  reviewCount: reviews.length,
+  ratingValue: 5,
+  reviewCount: 5,
   bestRating: 5,
   worstRating: 1,
 } as const;
 
-export const REVIEWS_HEADLINE = "Why Emporia Drivers Choose DLF Auto Sales";
+export const REVIEW_TRUST_BADGE = "5-Star Local Dealership Reviews";
+
+export const REVIEWS_HEADLINE = "Real Reviews From Emporia Drivers";
 
 export const REVIEWS_SUPPORTING_COPY =
-  "From first-time buyers to families upgrading vehicles, DLF Auto Sales is focused on making the car-buying process simple, honest, and stress-free.";
+  "Carlos and the DLF Auto Sales team earn trust one customer at a time — honest help, financing options, fair prices, and a welcoming experience for every shopper.";
 
 export const REVIEW_TRUST_STATS = [
-  "Local Dealership",
-  "Financing Available",
-  "Trade-Ins Welcome",
-  "Quality Used Vehicles",
+  { value: "5.0", label: "Average Rating" },
+  { value: "5", label: "Verified Reviews" },
+  { value: "100%", label: "5-Star Ratings" },
+  { value: "Local", label: "Emporia, KS" },
 ] as const;
+
+export function getReviewerInitials(name: string): string {
+  const parts = name.trim().split(/\s+/);
+  if (parts.length >= 2) {
+    return `${parts[0][0]}${parts[parts.length - 1][0]}`.toUpperCase();
+  }
+  return name.slice(0, 2).toUpperCase();
+}

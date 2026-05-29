@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/Button";
 import { VehicleGallery } from "./VehicleGallery";
 import { VehicleCard } from "./VehicleCard";
 import { ContactForm } from "@/components/forms/ContactForm";
+import { AskAboutVehicleButton } from "@/components/leads/AskAboutVehicleButton";
 import { PageCTA } from "@/components/shared/PageCTA";
 import { ReviewsSection } from "@/components/shared/ReviewsSection";
 import { PaymentCalculator } from "@/components/PaymentCalculator";
@@ -96,6 +97,7 @@ export function VehicleDetailContent({ vehicle }: VehicleDetailContentProps) {
               />
 
               <div className="mt-4 grid gap-2">
+                <AskAboutVehicleButton vehicleName={title} variant="primary" />
                 <Button href={FINANCING_PRE_QUALIFY_HASH} size="lg" className="w-full">
                   Get Pre-Qualified
                 </Button>
@@ -182,10 +184,13 @@ export function VehicleDetailContent({ vehicle }: VehicleDetailContentProps) {
                   Inquire About This Vehicle
                 </h2>
                 <p className="mt-2 text-sm text-text-dark/70">
-                  Have a general question? Send us a message and we&apos;ll get back
-                  to you quickly.
+                  Use the quick form for a fast response, or send a detailed message
+                  below.
                 </p>
-                <div className="mt-6">
+                <div className="mt-4">
+                  <AskAboutVehicleButton vehicleName={title} />
+                </div>
+                <div className="mt-8 border-t border-border-gray pt-8">
                   <ContactForm
                     defaultVehicle={title}
                     title="Request More Info"

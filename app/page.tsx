@@ -17,7 +17,7 @@ export default function Home() {
       <FinancingPreview />
       <WhyChoose />
       <TradeInPreview />
-      <ReviewsSection background="white" />
+      <ReviewsSection background="dark" />
       <CitiesWeServe />
       <PageCTA />
     </>

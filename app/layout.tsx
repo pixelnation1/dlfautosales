@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Barlow_Condensed, Inter } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { MobileStickyCTA } from "@/components/layout/MobileStickyCTA";
+import { LeadProvider } from "@/components/leads/LeadProvider";
+import { StickyLeadSystem } from "@/components/leads/StickyLeadSystem";
 import { JsonLd } from "@/components/shared/JsonLd";
 import { autoDealerSchema } from "@/lib/seo/schema";
 import { pageMetadata } from "@/lib/seo/metadata";
@@ -28,12 +29,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${barlow.variable} scroll-smooth`}>
-      <body className="min-h-screen bg-white pb-[calc(3.75rem+env(safe-area-inset-bottom))] text-text-dark antialiased lg:pb-0">
+      <body className="min-h-screen bg-white pb-[calc(4.25rem+env(safe-area-inset-bottom))] text-text-dark antialiased lg:pb-0">
         <JsonLd data={autoDealerSchema()} />
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <MobileStickyCTA />
+        <LeadProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <StickyLeadSystem />
+        </LeadProvider>
       </body>
     </html>
   );

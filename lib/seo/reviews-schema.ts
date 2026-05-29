@@ -28,7 +28,7 @@ function reviewToSchema(review: Review) {
   };
 }
 
-/** Aggregate + individual reviews — update REVIEW_AGGREGATE when live data is available */
+/** Aggregate + individual reviews for DLF Auto Sales */
 export function dealershipReviewsSchema() {
   return {
     "@context": "https://schema.org",
