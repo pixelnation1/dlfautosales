@@ -18,7 +18,7 @@ export function PageCTA({
   primaryLabel = "View Inventory",
   primaryHref = ROUTES.inventory,
   secondaryLabel = "Get Approved Today",
-  secondaryHref = ROUTES.financingApplication,
+  secondaryHref = ROUTES.financingPreQualify,
 }: PageCTAProps) {
   return (
     <section className="relative overflow-hidden bg-dark py-16 sm:py-20">

@@ -28,7 +28,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         subtitle="Questions about used cars in Emporia KS, auto financing, or trade-ins? Reach out — our team responds fast and treats every inquiry with respect."
         eyebrow="Contact"
         primaryCta={{ label: "View Inventory", href: ROUTES.inventory }}
-        secondaryCta={{ label: "Get Approved", href: ROUTES.financingApplication }}
+        secondaryCta={{ label: "Get Approved", href: ROUTES.financing }}
       />
 
       <section className="bg-light-gray py-14 sm:py-20">
@@ -54,7 +54,7 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
         primaryLabel="Browse Inventory"
         primaryHref={ROUTES.inventory}
         secondaryLabel="Apply for Financing"
-        secondaryHref={ROUTES.financingApplication}
+        secondaryHref={ROUTES.financing}
       />
     </>
   );

@@ -15,7 +15,8 @@ export const ROUTES = {
   home: "/",
   inventory: "/inventory",
   financing: "/financing",
-  financingApplication: "/financing#application",
+  /** Scroll target on financing page or vehicle detail */
+  financingPreQualify: "/financing#pre-qualify",
   tradeIn: "/trade-in",
   about: "/about",
   contact: "/contact",

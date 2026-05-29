@@ -22,7 +22,7 @@ export default function InventoryPage() {
         h1="Used Cars, Trucks, and SUVs for Sale in Emporia, KS"
         subtitle="Browse our hand-picked lot of quality used vehicles at DLF Auto Sales — a trusted used car dealership in Emporia KS with transparent pricing and financing on every ride."
         eyebrow="Inventory"
-        primaryCta={{ label: "Get Pre-Approved", href: ROUTES.financingApplication }}
+        primaryCta={{ label: "Get Pre-Approved", href: ROUTES.financingPreQualify }}
         secondaryCta={{ label: "Contact Us", href: ROUTES.contact }}
       />
 
@@ -39,7 +39,7 @@ export default function InventoryPage() {
           </div>
 
           <div className="mt-10 flex flex-wrap gap-3">
-            <Button href={ROUTES.financingApplication} size="sm">
+            <Button href={ROUTES.financingPreQualify} size="sm">
               Finance Any Vehicle
             </Button>
             <Button href={ROUTES.tradeIn} variant="secondary" size="sm">
@@ -70,7 +70,7 @@ export default function InventoryPage() {
         primaryLabel="Contact Us"
         primaryHref={ROUTES.contact}
         secondaryLabel="Apply for Financing"
-        secondaryHref={ROUTES.financingApplication}
+        secondaryHref={ROUTES.financingPreQualify}
       />
     </>
   );

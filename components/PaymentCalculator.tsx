@@ -21,6 +21,8 @@ type PaymentCalculatorProps = {
   vehicleName?: string;
   /** Show editable vehicle price field (financing page). Hidden when price is fixed-only. */
   showVehiclePriceInput?: boolean;
+  /** Link for “Apply for Financing” (e.g. #pre-qualify on vehicle pages). */
+  financingHref?: string;
   className?: string;
 };
 
@@ -33,6 +35,7 @@ export function PaymentCalculator({
   initialVehiclePrice = 0,
   vehicleName,
   showVehiclePriceInput = false,
+  financingHref = ROUTES.financingPreQualify,
   className = "",
 }: PaymentCalculatorProps) {
   const [vehiclePrice, setVehiclePrice] = useState(
@@ -197,7 +200,7 @@ export function PaymentCalculator({
       </p>
 
       <div className="mt-5 grid gap-2">
-        <Button href={ROUTES.financingApplication} size="lg" className="w-full">
+        <Button href={financingHref} size="lg" className="w-full">
           Apply for Financing
         </Button>
         <a

@@ -79,7 +79,7 @@ export default function TradeInPage() {
             <Button href={ROUTES.contact} size="lg">
               Request Trade-In Appraisal
             </Button>
-            <Button href={ROUTES.financingApplication} variant="secondary" size="lg">
+            <Button href={ROUTES.financingPreQualify} variant="secondary" size="lg">
               Get Pre-Approved
             </Button>
           </div>

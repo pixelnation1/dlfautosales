@@ -47,7 +47,7 @@ export function Hero() {
                 View Inventory
               </Button>
               <Button
-                href={ROUTES.financingApplication}
+                href={ROUTES.financing}
                 variant="outline"
                 size="lg"
                 className="w-full sm:w-auto"
@@ -88,7 +88,7 @@ export function Hero() {
                   </li>
                 ))}
               </ul>
-              <Button href={ROUTES.financingApplication} size="sm" className="mt-5 w-full">
+              <Button href={ROUTES.financingPreQualify} size="sm" className="mt-5 w-full">
                 Check Your Approval
               </Button>
             </div>

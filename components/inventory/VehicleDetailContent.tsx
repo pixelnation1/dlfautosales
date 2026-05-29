@@ -13,6 +13,8 @@ import { VehicleCard } from "./VehicleCard";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { PageCTA } from "@/components/shared/PageCTA";
 import { PaymentCalculator } from "@/components/PaymentCalculator";
+import { FinancingPreQualificationForm } from "@/components/forms/FinancingPreQualificationForm";
+import { FINANCING_PRE_QUALIFY_HASH } from "@/lib/financing/constants";
 
 type VehicleDetailContentProps = {
   vehicle: Vehicle;
@@ -89,11 +91,12 @@ export function VehicleDetailContent({ vehicle }: VehicleDetailContentProps) {
                 className="mt-4"
                 initialVehiclePrice={vehicle.price}
                 vehicleName={title}
+                financingHref={FINANCING_PRE_QUALIFY_HASH}
               />
 
               <div className="mt-4 grid gap-2">
-                <Button href={ROUTES.financingApplication} size="lg" className="w-full">
-                  Get Financing
+                <Button href={FINANCING_PRE_QUALIFY_HASH} size="lg" className="w-full">
+                  Get Pre-Qualified
                 </Button>
                 <Button href={ROUTES.tradeIn} variant="secondary" size="lg" className="w-full">
                   Value Your Trade-In
@@ -167,19 +170,26 @@ export function VehicleDetailContent({ vehicle }: VehicleDetailContentProps) {
               </p>
             </div>
 
-            <div className="rounded-xl border border-border-gray bg-white p-6 sm:p-8">
-              <h2 className="font-display text-xl font-bold uppercase text-dark">
-                Inquire About This Vehicle
-              </h2>
-              <p className="mt-2 text-sm text-text-dark/70">
-                Interested in this {title}? Send us a message and we&apos;ll get back
-                to you quickly.
-              </p>
-              <div className="mt-6">
-                <ContactForm
-                  defaultVehicle={title}
-                  title="Request More Info"
-                />
+            <div className="space-y-6">
+              <FinancingPreQualificationForm
+                variant="compact"
+                defaultVehicle={title}
+                source="vehicle-detail"
+              />
+              <div className="rounded-xl border border-border-gray bg-white p-6 sm:p-8">
+                <h2 className="font-display text-xl font-bold uppercase text-dark">
+                  Inquire About This Vehicle
+                </h2>
+                <p className="mt-2 text-sm text-text-dark/70">
+                  Have a general question? Send us a message and we&apos;ll get back
+                  to you quickly.
+                </p>
+                <div className="mt-6">
+                  <ContactForm
+                    defaultVehicle={title}
+                    title="Request More Info"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -213,7 +223,7 @@ export function VehicleDetailContent({ vehicle }: VehicleDetailContentProps) {
         title={`Ready to Drive This ${vehicle.make}?`}
         description={`Schedule a test drive or get pre-approved for this ${vehicle.year} ${vehicle.make} ${vehicle.model} at DLF Auto Sales in Emporia, KS.`}
         primaryLabel="Get Pre-Approved"
-        primaryHref={ROUTES.financingApplication}
+        primaryHref={FINANCING_PRE_QUALIFY_HASH}
         secondaryLabel="Browse More Vehicles"
         secondaryHref={ROUTES.inventory}
       />

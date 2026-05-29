@@ -3,7 +3,8 @@ import { PageHero } from "@/components/shared/PageHero";
 import { FAQ } from "@/components/shared/FAQ";
 import { PageCTA } from "@/components/shared/PageCTA";
 import { JsonLd } from "@/components/shared/JsonLd";
-import { FinancingApplicationForm } from "@/components/forms/FinancingApplicationForm";
+import { FinancingPreQualificationForm } from "@/components/forms/FinancingPreQualificationForm";
+import { FINANCING_PRE_QUALIFY_FORM_ID } from "@/lib/financing/constants";
 import { financingFaqs } from "@/lib/data/faqs";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { faqPageSchema } from "@/lib/seo/schema";
@@ -41,7 +42,7 @@ export default function FinancingPage() {
         h1="Auto Financing in Emporia, KS"
         subtitle="DLF Auto Sales makes auto financing in Emporia KS straightforward — whether you have great credit, bad credit, or no credit history at all. Apply online or call our local team today."
         eyebrow="Financing"
-        primaryCta={{ label: "Start Application", href: ROUTES.financingApplication }}
+        primaryCta={{ label: "Get Pre-Qualified", href: `#${FINANCING_PRE_QUALIFY_FORM_ID}` }}
         secondaryCta={{ label: "View Inventory", href: ROUTES.inventory }}
       />
 
@@ -103,8 +104,8 @@ export default function FinancingPage() {
               </div>
             </div>
 
-            <div id="application" className="scroll-mt-28">
-              <FinancingApplicationForm />
+            <div className="scroll-mt-28">
+              <FinancingPreQualificationForm variant="full" source="financing-page" />
             </div>
           </div>
         </div>
@@ -129,8 +130,8 @@ export default function FinancingPage() {
         eyebrow="Get Started"
         title="Apply for Financing Today"
         description="Take the first step toward your next vehicle. No pressure — just honest answers from your local Emporia dealership."
-        primaryLabel="Submit Application"
-        primaryHref={ROUTES.financingApplication}
+        primaryLabel="Get Pre-Qualified"
+        primaryHref={`#${FINANCING_PRE_QUALIFY_FORM_ID}`}
         secondaryLabel="Call Us Now"
         secondaryHref={SITE.phoneHref}
       />

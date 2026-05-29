@@ -30,7 +30,7 @@ export function MobileStickyCTA() {
           </span>
         </Link>
         <Link
-          href={ROUTES.financingApplication}
+          href={ROUTES.financing}
           className="flex flex-col items-center justify-center gap-0.5 bg-primary py-3 text-center transition-colors active:bg-primary-hover"
         >
           <CheckIcon />

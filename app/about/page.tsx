@@ -75,7 +75,7 @@ export default function AboutPage() {
         primaryLabel="View Inventory"
         primaryHref={ROUTES.inventory}
         secondaryLabel="Get Approved"
-        secondaryHref={ROUTES.financingApplication}
+        secondaryHref={ROUTES.financingPreQualify}
       />
     </>
   );

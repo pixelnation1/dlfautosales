@@ -75,7 +75,7 @@ export function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href={ROUTES.financingApplication} size="sm">
+          <Button href={ROUTES.financing} size="sm">
             Get Approved
           </Button>
         </div>
@@ -127,7 +127,7 @@ export function Header() {
               {link.label}
             </Link>
           ))}
-          <Button href={ROUTES.financingApplication} size="lg" className="mt-6 w-full max-w-xs">
+          <Button href={ROUTES.financing} size="lg" className="mt-6 w-full max-w-xs">
             Get Approved
           </Button>
         </nav>

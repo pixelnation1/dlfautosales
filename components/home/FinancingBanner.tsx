@@ -18,7 +18,7 @@ export function FinancingBanner({ variant = "full" }: FinancingBannerProps) {
             bad credit, no credit &amp; first-time buyers welcome.
           </p>
           <Link
-            href={ROUTES.financingApplication}
+            href={ROUTES.financingPreQualify}
             className="shrink-0 rounded-md bg-dark px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-dark/90"
           >
             Apply Now
@@ -50,7 +50,7 @@ export function FinancingBanner({ variant = "full" }: FinancingBannerProps) {
           </div>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <Button
-              href={ROUTES.financingApplication}
+              href={ROUTES.financingPreQualify}
               size="lg"
               className="w-full bg-dark text-white shadow-none hover:bg-[#0a0d14] sm:w-auto"
             >
