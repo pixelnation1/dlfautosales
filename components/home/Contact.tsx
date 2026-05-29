@@ -13,18 +13,20 @@ export function Contact() {
     setSubmitted(true);
   }
 
+  const mapsEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(SITE.address)}&t=&z=14&ie=UTF8&iwloc=&output=embed`;
+
   return (
-    <section id="contact" className="bg-light-gray py-16 sm:py-20 lg:py-24">
+    <section id="contact" className="bg-light-gray py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Contact"
-          title="Visit DLF Auto Sales"
-          description="Ready to find your next vehicle? Call, visit, or send us a message — we're here to help with used cars in Emporia KS and auto financing questions."
+          title="Visit DLF Auto Sales Today"
+          description="Stop by the lot, give us a call, or send a message — we're ready to help you find your next vehicle and get you approved."
         />
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2">
-          <div className="space-y-8">
-            <div className="grid gap-6 sm:grid-cols-2">
+          <div className="space-y-6">
+            <div className="grid gap-4 sm:grid-cols-2">
               <div className="rounded-xl border border-border-gray bg-white p-5">
                 <p className="text-xs font-bold uppercase tracking-widest text-primary">
                   Phone
@@ -50,37 +52,31 @@ export function Contact() {
               <p className="text-xs font-bold uppercase tracking-widest text-primary">
                 Address
               </p>
-              <p className="mt-2 text-text-dark/80">{SITE.address}</p>
-              <p className="mt-1 text-sm text-text-dark/50">
-                (Placeholder — update with your exact location)
-              </p>
+              <p className="mt-2 font-medium text-text-dark">{SITE.address}</p>
+              <a
+                href={`https://www.google.com/maps/search/?api=1&query=${SITE.mapsQuery}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-block text-sm font-semibold text-primary hover:underline"
+              >
+                Get directions →
+              </a>
             </div>
 
             <div className="overflow-hidden rounded-xl border border-border-gray bg-white">
-              <div className="flex h-64 items-center justify-center bg-dark/5 sm:h-80">
-                <div className="text-center px-6">
-                  <p className="font-display text-lg font-bold uppercase text-dark">
-                    Google Maps
-                  </p>
-                  <p className="mt-2 text-sm text-text-dark/60">
-                    Embed your Google Maps iframe here when ready.
-                  </p>
-                  <a
-                    href={`https://www.google.com/maps/search/?api=1&query=${SITE.mapsQuery}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-4 inline-block text-sm font-semibold text-primary hover:underline"
-                  >
-                    Open in Google Maps →
-                  </a>
-                </div>
-              </div>
+              <iframe
+                title="DLF Auto Sales location"
+                src={mapsEmbedSrc}
+                className="h-64 w-full border-0 sm:h-80"
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 
           <div className="rounded-xl border border-border-gray bg-white p-6 sm:p-8">
             {submitted ? (
-              <div className="flex h-full min-h-[320px] flex-col items-center justify-center text-center">
+              <div className="flex min-h-[320px] flex-col items-center justify-center text-center">
                 <div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10 text-2xl text-primary">
                   ✓
                 </div>
@@ -89,7 +85,7 @@ export function Contact() {
                 </h3>
                 <p className="mt-2 max-w-sm text-text-dark/70">
                   Thanks for reaching out! A team member will contact you shortly.
-                  For faster service, call us at{" "}
+                  For faster service, call{" "}
                   <a href={SITE.phoneHref} className="font-semibold text-primary">
                     {SITE.phone}
                   </a>
@@ -110,6 +106,7 @@ export function Contact() {
                       type="text"
                       name="name"
                       required
+                      autoComplete="name"
                       className="mt-1 w-full rounded-md border border-border-gray px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary"
                     />
                   </label>
@@ -121,6 +118,7 @@ export function Contact() {
                       type="tel"
                       name="phone"
                       required
+                      autoComplete="tel"
                       className="mt-1 w-full rounded-md border border-border-gray px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary"
                     />
                   </label>
@@ -133,6 +131,7 @@ export function Contact() {
                     type="email"
                     name="email"
                     required
+                    autoComplete="email"
                     className="mt-1 w-full rounded-md border border-border-gray px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary"
                   />
                 </label>
@@ -143,7 +142,6 @@ export function Contact() {
                   <input
                     type="text"
                     name="vehicle"
-                    placeholder="e.g. 2019 Toyota Camry"
                     className="mt-1 w-full rounded-md border border-border-gray px-4 py-3 text-sm outline-none transition-colors focus:border-primary focus:ring-1 focus:ring-primary"
                   />
                 </label>

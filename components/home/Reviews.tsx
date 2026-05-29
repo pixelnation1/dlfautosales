@@ -21,12 +21,12 @@ function StarRating({ rating }: { rating: number }) {
 
 export function Reviews() {
   return (
-    <section className="bg-white py-16 sm:py-20 lg:py-24">
+    <section className="bg-white py-14 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Reviews"
-          title="What Our Customers Say"
-          description="Placeholder reviews — swap these cards with live Google reviews when your Business Profile is connected."
+          title="Trusted by Emporia Drivers"
+          description="Real feedback from customers who bought and financed with DLF Auto Sales."
           align="center"
         />
 
@@ -34,11 +34,10 @@ export function Reviews() {
           {reviews.map((review) => (
             <article
               key={review.id}
-              className="flex flex-col rounded-xl border border-border-gray bg-light-gray/50 p-6"
-              data-review-id={review.id}
+              className="flex flex-col rounded-2xl border border-border-gray bg-light-gray/50 p-6 transition-shadow hover:shadow-lg"
             >
               <StarRating rating={review.rating} />
-              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-text-dark/80">
+              <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-text-dark/85">
                 &ldquo;{review.text}&rdquo;
               </blockquote>
               <footer className="mt-6 border-t border-border-gray pt-4">
