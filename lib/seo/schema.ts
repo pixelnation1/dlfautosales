@@ -1,5 +1,10 @@
 import { SITE } from "@/lib/constants";
-import { getVehicleName, type Vehicle } from "@/lib/data/inventory";
+import {
+  getVehicleName,
+  getVehiclePrimaryImage,
+  getVehicleUrl,
+  type Vehicle,
+} from "@/lib/data/inventory";
 import type { FAQItem } from "@/lib/data/faqs";
 
 export function autoDealerSchema() {
@@ -70,23 +75,34 @@ export function vehicleSchema(vehicle: Vehicle) {
     "@context": "https://schema.org",
     "@type": "Car",
     name,
+    url: `${SITE.url}${getVehicleUrl(vehicle)}`,
     brand: { "@type": "Brand", name: vehicle.make },
     model: vehicle.model,
     vehicleModelDate: String(vehicle.year),
+    bodyType: vehicle.bodyStyle,
+    color: vehicle.exteriorColor,
+    vehicleInteriorColor: vehicle.interiorColor,
+    vehicleTransmission: vehicle.transmission,
+    driveWheelConfiguration: vehicle.drivetrain,
+    fuelType: vehicle.fuelType,
+    vehicleIdentificationNumber: vehicle.vin,
+    sku: vehicle.stockNumber,
     mileageFromOdometer: {
       "@type": "QuantitativeValue",
       value: vehicle.mileage,
       unitCode: "SMI",
     },
-    image: vehicle.image,
+    image: vehicle.imageUrls,
     offers: {
       "@type": "Offer",
       price: vehicle.price,
       priceCurrency: "USD",
       availability: "https://schema.org/InStock",
+      itemCondition: "https://schema.org/UsedCondition",
       seller: {
         "@type": "AutoDealer",
         name: SITE.name,
+        url: SITE.url,
       },
     },
   };
@@ -104,7 +120,8 @@ export function vehicleListSchema(vehicles: Vehicle[]) {
       item: {
         "@type": "Car",
         name: getVehicleName(vehicle),
-        url: `${SITE.url}/inventory#vehicle-${vehicle.id}`,
+        url: `${SITE.url}${getVehicleUrl(vehicle)}`,
+        image: getVehiclePrimaryImage(vehicle),
         offers: {
           "@type": "Offer",
           price: vehicle.price,

@@ -4,11 +4,11 @@ import {
   formatMileage,
   formatPrice,
   getVehicleName,
+  getVehiclePrimaryImage,
+  getVehicleUrl,
   type Vehicle,
 } from "@/lib/data/inventory";
 import { ROUTES } from "@/lib/constants";
-import { JsonLd } from "@/components/shared/JsonLd";
-import { vehicleSchema } from "@/lib/seo/schema";
 
 type VehicleCardProps = {
   vehicle: Vehicle;
@@ -16,22 +16,17 @@ type VehicleCardProps = {
 
 export function VehicleCard({ vehicle }: VehicleCardProps) {
   const title = getVehicleName(vehicle);
-  const contactHref = `${ROUTES.contact}?vehicle=${encodeURIComponent(title)}`;
+  const detailHref = getVehicleUrl(vehicle);
 
   return (
-    <article
-      id={`vehicle-${vehicle.id}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border-gray bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-2xl"
-    >
-      <JsonLd data={vehicleSchema(vehicle)} />
-
+    <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border-gray bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-2xl">
       <Link
-        href={contactHref}
+        href={detailHref}
         className="relative block aspect-[16/10] overflow-hidden bg-dark focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
         aria-label={`View details for ${title}`}
       >
         <Image
-          src={vehicle.image}
+          src={getVehiclePrimaryImage(vehicle)}
           alt={title}
           fill
           className="object-cover transition-transform duration-500 group-hover:scale-110"
@@ -74,7 +69,7 @@ export function VehicleCard({ vehicle }: VehicleCardProps) {
 
         <div className="mt-5 grid grid-cols-2 gap-2 border-t border-border-gray pt-4">
           <Link
-            href={contactHref}
+            href={detailHref}
             className="flex items-center justify-center gap-1.5 rounded-lg bg-primary py-3 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-primary-hover"
           >
             View Details
