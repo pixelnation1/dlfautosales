@@ -76,11 +76,15 @@ export const pageMetadata = {
     keywords: ["trade in vehicle Emporia KS", "sell trade car Emporia"],
   }),
   about: buildPageMetadata({
-    title: "About DLF Auto Sales",
+    title: "About DLF Auto Sales | Used Car Dealership in Emporia, KS",
     description:
-      "Learn about DLF Auto Sales — a locally owned used car dealership in Emporia, KS committed to honest deals, quality vehicles, and customer-first service.",
+      "Learn about DLF Auto Sales, a local used car dealership in Emporia, KS helping drivers find affordable vehicles, financing options, trade-ins, and friendly customer service.",
     path: "/about",
-    keywords: ["local car dealer Emporia", "family owned dealership Kansas"],
+    keywords: [
+      "Carlos DLF Auto Sales",
+      "local car dealer Emporia",
+      "Spanish speaking car dealer Emporia KS",
+    ],
   }),
   contact: buildPageMetadata({
     title: "Contact DLF Auto Sales in Emporia, KS",

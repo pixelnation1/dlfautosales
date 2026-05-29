@@ -1,95 +1,43 @@
 import type { Metadata } from "next";
 import { PageHero } from "@/components/shared/PageHero";
-import { PageCTA } from "@/components/shared/PageCTA";
-import { TrustSection } from "@/components/home/TrustSection";
+import { FAQ } from "@/components/shared/FAQ";
 import { ReviewsSection } from "@/components/shared/ReviewsSection";
+import { JsonLd } from "@/components/shared/JsonLd";
+import {
+  AboutFinalCTA,
+  AboutPageContent,
+} from "@/components/about/AboutPageContent";
+import { aboutFaqs } from "@/lib/data/about-faqs";
 import { pageMetadata } from "@/lib/seo/metadata";
+import { faqPageSchema } from "@/lib/seo/schema";
 import { ROUTES } from "@/lib/constants";
-import { Button } from "@/components/ui/Button";
-import { KnowledgePromo } from "@/components/shared/KnowledgePromo";
 
 export const metadata: Metadata = pageMetadata.about;
 
 export default function AboutPage() {
   return (
     <>
+      <JsonLd data={faqPageSchema(aboutFaqs)} />
+
       <PageHero
         h1="About DLF Auto Sales"
-        subtitle="Locally owned and customer-focused — DLF Auto Sales is the used car dealership in Emporia KS where honest deals and quality vehicles come first."
+        subtitle="Meet Carlos and the team behind Emporia's local used car dealership — affordable vehicles, financing help, trade-ins, and the kind of customer service people actually talk about."
         eyebrow="About Us"
         primaryCta={{ label: "View Inventory", href: ROUTES.inventory }}
-        secondaryCta={{ label: "Contact Us", href: ROUTES.contact }}
+        secondaryCta={{ label: "Get Approved", href: ROUTES.financingPreQualify }}
       />
 
-      <section className="bg-white py-14 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <div>
-              <h2 className="font-display text-2xl font-bold uppercase text-dark sm:text-3xl">
-                Your Neighbor in Emporia
-              </h2>
-              <p className="mt-4 leading-relaxed text-text-dark/75">
-                DLF Auto Sales LLC isn&apos;t a corporate mega-lot — we&apos;re a
-                community-focused dealership built on relationships. Every
-                customer gets straight answers, fair pricing, and support before
-                and after the sale.
-              </p>
-              <p className="mt-4 leading-relaxed text-text-dark/75">
-                We specialize in quality used cars in Emporia KS, with auto
-                financing options for all credit situations and trade-ins welcome
-                on every deal. Our team knows the roads, the weather, and the
-                budgets that matter to Kansas drivers.
-              </p>
-              <Button href={ROUTES.financing} size="md" className="mt-8">
-                Explore Financing
-              </Button>
-            </div>
-            <div className="rounded-2xl border border-border-gray bg-light-gray p-8">
-              <h3 className="font-display text-xl font-bold uppercase text-dark">
-                What We Stand For
-              </h3>
-              <ul className="mt-6 space-y-4">
-                {[
-                  "Honest, no-pressure sales",
-                  "Hand-picked, quality inventory",
-                  "Financing for real-world credit",
-                  "Fair trade-in values",
-                  "Service after you drive away",
-                ].map((item) => (
-                  <li key={item} className="flex items-center gap-3 text-text-dark/80">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-white" aria-hidden>
-                      ✓
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-t border-border-gray bg-light-gray py-12 sm:py-14">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <KnowledgePromo
-            title="Why Buy Local? Start Here."
-            description="Our Knowledge Center covers financing, trade-ins, and shopping smart in Kansas — written for drivers who want honest answers from a local Emporia dealership."
-          />
-        </div>
-      </section>
-
-      <TrustSection />
+      <AboutPageContent />
 
       <ReviewsSection background="light-gray" />
 
-      <PageCTA
-        title="Experience the DLF Difference"
-        description="Visit our Emporia lot, browse inventory online, or call today — we're ready to help you find the right vehicle."
-        primaryLabel="View Inventory"
-        primaryHref={ROUTES.inventory}
-        secondaryLabel="Get Approved"
-        secondaryHref={ROUTES.financingPreQualify}
+      <FAQ
+        title="About DLF Auto Sales"
+        description="Quick answers about ownership, financing, language support, trade-ins, and our Emporia location."
+        items={aboutFaqs}
       />
+
+      <AboutFinalCTA />
     </>
   );
 }
