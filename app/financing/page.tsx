@@ -9,6 +9,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { faqPageSchema } from "@/lib/seo/schema";
 import { ROUTES, SITE } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { PaymentCalculator } from "@/components/PaymentCalculator";
 
 export const metadata: Metadata = pageMetadata.financing;
 
@@ -43,6 +44,26 @@ export default function FinancingPage() {
         primaryCta={{ label: "Start Application", href: ROUTES.financingApplication }}
         secondaryCta={{ label: "View Inventory", href: ROUTES.inventory }}
       />
+
+      <section className="border-y border-border-gray bg-light-gray py-14 sm:py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-2xl text-center">
+            <p className="text-xs font-bold uppercase tracking-[0.2em] text-primary">
+              Plan Your Payment
+            </p>
+            <h2 className="mt-2 font-display text-2xl font-bold uppercase text-dark sm:text-3xl">
+              Auto Loan Payment Calculator
+            </h2>
+            <p className="mt-3 text-text-dark/70">
+              Enter a vehicle price, down payment, and trade-in value to see what
+              your monthly payment could look like at DLF Auto Sales in Emporia, KS.
+            </p>
+          </div>
+          <div className="mx-auto mt-10 max-w-xl">
+            <PaymentCalculator showVehiclePriceInput />
+          </div>
+        </div>
+      </section>
 
       <section className="bg-white py-14 sm:py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

@@ -12,6 +12,7 @@ import { VehicleGallery } from "./VehicleGallery";
 import { VehicleCard } from "./VehicleCard";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { PageCTA } from "@/components/shared/PageCTA";
+import { PaymentCalculator } from "@/components/PaymentCalculator";
 
 type VehicleDetailContentProps = {
   vehicle: Vehicle;
@@ -80,13 +81,15 @@ export function VehicleDetailContent({ vehicle }: VehicleDetailContentProps) {
                   {formatPrice(vehicle.price)}
                 </p>
                 <p className="mt-2 text-sm text-text-dark/70">
-                  Est. payment{" "}
-                  <span className="font-bold text-primary">
-                    ${vehicle.paymentEstimate}/mo
-                  </span>{" "}
-                  · subject to credit approval
+                  List price before down payment &amp; trade-in
                 </p>
               </div>
+
+              <PaymentCalculator
+                className="mt-4"
+                initialVehiclePrice={vehicle.price}
+                vehicleName={title}
+              />
 
               <div className="mt-4 grid gap-2">
                 <Button href={ROUTES.financingApplication} size="lg" className="w-full">
