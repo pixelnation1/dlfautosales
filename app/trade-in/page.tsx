@@ -8,6 +8,7 @@ import { pageMetadata } from "@/lib/seo/metadata";
 import { faqPageSchema } from "@/lib/seo/schema";
 import { ROUTES } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { KnowledgePromo } from "@/components/shared/KnowledgePromo";
 
 export const metadata: Metadata = pageMetadata.tradeIn;
 
@@ -83,6 +84,15 @@ export default function TradeInPage() {
               Get Pre-Approved
             </Button>
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border-gray bg-white py-12 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <KnowledgePromo
+            title="Trade-In Guides"
+            description="Compare trading in vs selling yourself, understand how appraisals work, and see what to expect when you trade toward your next vehicle in Emporia."
+          />
         </div>
       </section>
 

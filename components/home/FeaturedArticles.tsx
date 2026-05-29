@@ -13,16 +13,16 @@ export function FeaturedArticles() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
           <SectionHeading
-            eyebrow="Knowledge Center"
-            title="Car Buying Tips for Kansas Drivers"
-            description="Financing, trade-ins, and used vehicle advice from your local Emporia dealership — built for search and real-world decisions."
+            eyebrow="Car Buying Tips"
+            title="Expert Guides for Kansas Drivers"
+            description="Financing, trade-ins, and used vehicle advice from DLF Auto Sales in Emporia — free articles to help you shop with confidence."
           />
           <Button
             href={ROUTES.knowledge}
             variant="secondary"
             className="shrink-0 self-start lg:self-auto"
           >
-            View All Articles
+            All Car Buying Tips
           </Button>
         </div>
 
@@ -37,7 +37,7 @@ export function FeaturedArticles() {
             href={ROUTES.knowledge}
             className="text-sm font-bold uppercase tracking-wide text-primary hover:underline"
           >
-            Explore the Knowledge Center →
+            View all car buying tips →
           </Link>
         </p>
       </div>

@@ -29,11 +29,6 @@ export const ROUTES = {
   blog: "/blog",
 } as const;
 
-export const NAV_LINKS = [
-  { label: "Home", href: ROUTES.home },
-  { label: "Inventory", href: ROUTES.inventory },
-  { label: "Financing", href: ROUTES.financing },
-  { label: "Trade-In", href: ROUTES.tradeIn },
-  { label: "About", href: ROUTES.about },
-  { label: "Contact", href: ROUTES.contact },
-] as const;
+/** @see lib/nav.ts */
+export { NAV_LINKS, isNavLinkActive } from "@/lib/nav";
+export type { NavLink } from "@/lib/nav";

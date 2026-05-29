@@ -6,6 +6,7 @@ import { ReviewsSection } from "@/components/shared/ReviewsSection";
 import { pageMetadata } from "@/lib/seo/metadata";
 import { ROUTES } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { KnowledgePromo } from "@/components/shared/KnowledgePromo";
 
 export const metadata: Metadata = pageMetadata.about;
 
@@ -65,6 +66,15 @@ export default function AboutPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="border-t border-border-gray bg-light-gray py-12 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <KnowledgePromo
+            title="Why Buy Local? Start Here."
+            description="Our Knowledge Center covers financing, trade-ins, and shopping smart in Kansas — written for drivers who want honest answers from a local Emporia dealership."
+          />
         </div>
       </section>
 

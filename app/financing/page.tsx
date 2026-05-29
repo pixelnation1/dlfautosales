@@ -11,6 +11,7 @@ import { faqPageSchema } from "@/lib/seo/schema";
 import { ROUTES, SITE } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 import { PaymentCalculator } from "@/components/PaymentCalculator";
+import { KnowledgePromo } from "@/components/shared/KnowledgePromo";
 
 export const metadata: Metadata = pageMetadata.financing;
 
@@ -117,6 +118,15 @@ export default function FinancingPage() {
           <Button href={ROUTES.inventory} size="sm">
             Browse Inventory
           </Button>
+        </div>
+      </section>
+
+      <section className="border-t border-border-gray bg-light-gray py-12 sm:py-14">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <KnowledgePromo
+            title="Financing Guides & Credit Tips"
+            description="Learn what credit score you need, how much down payment to bring, and how to get approved for a used car loan in Kansas — before you apply."
+          />
         </div>
       </section>
 
