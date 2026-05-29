@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ROUTES, SITE } from "@/lib/constants";
+import { routesFor } from "@/lib/i18n/routes";
 import { Button } from "@/components/ui/Button";
 
 const whyChooseItems = [
@@ -285,7 +286,31 @@ export function AboutPageContent() {
   );
 }
 
-export function AboutFinalCTA() {
+type AboutFinalCTAProps = {
+  locale?: "en" | "es";
+};
+
+export function AboutFinalCTA({ locale = "en" }: AboutFinalCTAProps) {
+  const routes = routesFor(locale);
+  const copy =
+    locale === "es"
+      ? {
+          eyebrow: "Cuando usted quiera",
+          title: "Visite DLF Auto Sales en Emporia",
+          desc: "Vea el inventario, solicite aprobación o hable con Carlos y el equipo.",
+          inventory: "Ver inventario",
+          approved: "Solicitar aprobación",
+          contact: "Contáctenos",
+        }
+      : {
+          eyebrow: "Ready When You Are",
+          title: "Visit DLF Auto Sales in Emporia",
+          desc: "Browse inventory online, get approved for financing, or reach out to Carlos and the team — we are here to help you find the right used vehicle at the right price.",
+          inventory: "View Inventory",
+          approved: "Get Approved",
+          contact: "Contact Us",
+        };
+
   return (
     <section className="relative overflow-hidden bg-dark py-16 sm:py-20">
       <div
@@ -294,33 +319,29 @@ export function AboutFinalCTA() {
       />
       <div className="relative mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <p className="text-xs font-bold uppercase tracking-[0.25em] text-primary">
-          Ready When You Are
+          {copy.eyebrow}
         </p>
         <h2 className="mt-3 font-display text-3xl font-extrabold uppercase leading-tight text-white sm:text-4xl">
-          Visit DLF Auto Sales in Emporia
+          {copy.title}
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-white/75">
-          Browse inventory online, get approved for financing, or reach out to
-          Carlos and the team — we are here to help you find the right used
-          vehicle at the right price.
-        </p>
+        <p className="mx-auto mt-4 max-w-xl text-lg text-white/75">{copy.desc}</p>
         <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:justify-center">
-          <Button href={ROUTES.inventory} size="lg" className="w-full sm:w-auto">
-            View Inventory
+          <Button href={routes.inventory} size="lg" className="w-full sm:w-auto">
+            {copy.inventory}
           </Button>
           <Button
-            href={ROUTES.financingPreQualify}
+            href={routes.financingPreQualify}
             size="lg"
             variant="outline"
             className="w-full sm:w-auto"
           >
-            Get Approved
+            {copy.approved}
           </Button>
           <Link
-            href={ROUTES.contact}
+            href={routes.contact}
             className="inline-flex w-full items-center justify-center rounded-md border-2 border-white/30 bg-white/10 px-8 py-4 text-center text-sm font-semibold uppercase tracking-wide text-white transition-colors hover:bg-white/20 sm:w-auto"
           >
-            Contact Us
+            {copy.contact}
           </Link>
         </div>
         <p className="mt-8 text-sm text-white/55">

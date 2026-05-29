@@ -8,11 +8,16 @@ import {
   AboutPageContent,
 } from "@/components/about/AboutPageContent";
 import { aboutFaqs } from "@/lib/data/about-faqs";
-import { pageMetadata } from "@/lib/seo/metadata";
+import { buildLocalizedMetadataBase } from "@/lib/i18n/alternates";
 import { faqPageSchema } from "@/lib/seo/schema";
 import { ROUTES } from "@/lib/constants";
 
-export const metadata: Metadata = pageMetadata.about;
+export const metadata: Metadata = buildLocalizedMetadataBase(
+  "About DLF Auto Sales | Used Car Dealership in Emporia, KS",
+  "Learn about DLF Auto Sales, a local used car dealership in Emporia, KS helping drivers find affordable vehicles, financing options, trade-ins, and friendly customer service.",
+  "/about",
+  "en"
+);
 
 export default function AboutPage() {
   return (

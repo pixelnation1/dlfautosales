@@ -25,6 +25,8 @@ export const ROUTES = {
   contact: "/contact",
   areasWeServe: "/areas-we-serve",
   knowledge: "/knowledge",
+  findMyCar: "/find-my-car",
+  whyDlf: "/why-dlf",
   /** Legacy alias — redirects to knowledge hub */
   blog: "/blog",
 } as const;

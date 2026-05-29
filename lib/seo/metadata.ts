@@ -68,6 +68,17 @@ export const pageMetadata = {
       "no credit financing Emporia KS",
     ],
   }),
+  findMyCar: buildPageMetadata({
+    title: "Find My Car | Vehicle Finder in Emporia, KS",
+    description:
+      "Tell DLF Auto Sales what used car, truck, or SUV you want. Share your budget, monthly payment, and must-haves — our Emporia team will help you find the right vehicle.",
+    path: "/find-my-car",
+    keywords: [
+      "find used car Emporia KS",
+      "vehicle finder dealership",
+      "help me find a car Kansas",
+    ],
+  }),
   tradeIn: buildPageMetadata({
     title: "Trade In Your Vehicle in Emporia, KS",
     description:
@@ -76,9 +87,9 @@ export const pageMetadata = {
     keywords: ["trade in vehicle Emporia KS", "sell trade car Emporia"],
   }),
   about: buildPageMetadata({
-    title: "About DLF Auto Sales | Used Car Dealership in Emporia, KS",
+    title: "About DLF Auto Sales",
     description:
-      "Learn about DLF Auto Sales, a local used car dealership in Emporia, KS helping drivers find affordable vehicles, financing options, trade-ins, and friendly customer service.",
+      "Learn about DLF Auto Sales — a locally owned used car dealership in Emporia, KS committed to honest deals, quality vehicles, and customer-first service.",
     path: "/about",
     keywords: [
       "Carlos DLF Auto Sales",
