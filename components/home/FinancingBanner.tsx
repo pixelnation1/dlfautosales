@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ROUTES } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 type FinancingBannerProps = {
@@ -17,7 +18,7 @@ export function FinancingBanner({ variant = "full" }: FinancingBannerProps) {
             bad credit, no credit &amp; first-time buyers welcome.
           </p>
           <Link
-            href="#financing"
+            href={ROUTES.financingApplication}
             className="shrink-0 rounded-md bg-dark px-5 py-2.5 text-xs font-bold uppercase tracking-wide text-white transition-colors hover:bg-dark/90"
           >
             Apply Now
@@ -49,14 +50,14 @@ export function FinancingBanner({ variant = "full" }: FinancingBannerProps) {
           </div>
           <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
             <Button
-              href="#financing"
+              href={ROUTES.financingApplication}
               size="lg"
               className="w-full bg-dark text-white shadow-none hover:bg-[#0a0d14] sm:w-auto"
             >
               Start Application
             </Button>
             <Link
-              href="#contact"
+              href={ROUTES.contact}
               className="inline-flex w-full items-center justify-center rounded-md border-2 border-white px-8 py-4 text-center text-base font-semibold uppercase tracking-wide text-white transition-colors hover:bg-white hover:text-primary sm:w-auto"
             >
               Talk to Us

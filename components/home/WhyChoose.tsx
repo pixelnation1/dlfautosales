@@ -1,3 +1,4 @@
+import { ROUTES } from "@/lib/constants";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Button } from "@/components/ui/Button";
 
@@ -21,20 +22,20 @@ const reasons = [
 
 export function WhyChoose() {
   return (
-    <section id="about" className="bg-white py-14 sm:py-20 lg:py-24">
+    <section className="bg-light-gray py-14 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="lg:grid lg:grid-cols-2 lg:items-center lg:gap-16">
           <SectionHeading
             eyebrow="The DLF Difference"
-            title="A Better Way to Buy Used"
-            description="We're not the biggest lot in Kansas — and that's the point. DLF Auto Sales gives you the attention, honesty, and financing support you deserve."
+            title="Why Choose DLF Auto Sales"
+            description="A locally owned used car dealership in Emporia KS — premium service without the premium attitude. Serving Emporia and nearby Kansas communities."
           />
 
           <div className="mt-10 space-y-4 lg:mt-0">
             {reasons.map((reason, i) => (
               <div
                 key={reason.title}
-                className="flex gap-4 rounded-xl border border-border-gray p-5 transition-shadow hover:shadow-md"
+                className="flex gap-4 rounded-xl border border-border-gray bg-white p-5 transition-shadow hover:shadow-md"
               >
                 <span className="font-display text-3xl font-extrabold leading-none text-primary/30">
                   {String(i + 1).padStart(2, "0")}
@@ -49,8 +50,8 @@ export function WhyChoose() {
                 </div>
               </div>
             ))}
-            <Button href="#contact" size="md" className="mt-2 w-full sm:w-auto">
-              Schedule a Visit
+            <Button href={ROUTES.about} size="md" className="mt-2 w-full sm:w-auto">
+              About DLF Auto Sales
             </Button>
           </div>
         </div>

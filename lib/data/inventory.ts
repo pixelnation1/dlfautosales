@@ -92,6 +92,14 @@ export const featuredVehicles: Vehicle[] = [
   },
 ];
 
+export function getVehicleName(vehicle: Vehicle): string {
+  return `${vehicle.year} ${vehicle.make} ${vehicle.model}${
+    vehicle.trim ? ` ${vehicle.trim}` : ""
+  }`;
+}
+
+export const allVehicles = featuredVehicles;
+
 export function formatPrice(amount: number): string {
   return new Intl.NumberFormat("en-US", {
     style: "currency",

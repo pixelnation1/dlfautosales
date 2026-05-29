@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { SITE } from "@/lib/constants";
+import { SITE, ROUTES } from "@/lib/constants";
 
 export function MobileStickyCTA() {
   return (
@@ -21,7 +21,7 @@ export function MobileStickyCTA() {
           </span>
         </a>
         <Link
-          href="#inventory"
+          href={ROUTES.inventory}
           className="flex flex-col items-center justify-center gap-0.5 py-3 text-center transition-colors active:bg-white/10"
         >
           <CarIcon />
@@ -30,7 +30,7 @@ export function MobileStickyCTA() {
           </span>
         </Link>
         <Link
-          href="#financing"
+          href={ROUTES.financingApplication}
           className="flex flex-col items-center justify-center gap-0.5 bg-primary py-3 text-center transition-colors active:bg-primary-hover"
         >
           <CheckIcon />

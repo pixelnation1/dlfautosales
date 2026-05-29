@@ -1,4 +1,4 @@
-import { SITE } from "@/lib/constants";
+import { SITE, ROUTES } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
 
 const trustBadges = [
@@ -10,14 +10,8 @@ const trustBadges = [
 
 export function Hero() {
   return (
-    <section
-      id="home"
-      className="relative overflow-hidden bg-dark pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pb-20"
-    >
-      <div
-        className="pointer-events-none absolute inset-0"
-        aria-hidden
-      >
+    <section className="relative overflow-hidden bg-dark pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pb-20">
+      <div className="pointer-events-none absolute inset-0" aria-hidden>
         <div className="absolute -right-1/4 top-0 h-[600px] w-[600px] rounded-full bg-primary/25 blur-[140px]" />
         <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-primary/15 blur-[100px]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(5,7,13,0)_0%,rgba(5,7,13,0.9)_100%)]" />
@@ -35,27 +29,29 @@ export function Hero() {
               </span>
             </div>
 
-            <h1 className="font-display text-[2.25rem] font-extrabold uppercase leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-[4.25rem]">
-              Drive Home Today.
-              <span className="mt-1 block text-primary sm:mt-2">
-                Used Cars in Emporia, KS
-              </span>
+            <h1 className="font-display text-[2.25rem] font-extrabold uppercase leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Used Cars in Emporia, KS
             </h1>
 
             <p className="mt-6 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
-              Hand-picked inventory, fast financing approvals, and a no-pressure
-              buying experience from a dealership that knows this community.
-              Bad credit? First-time buyer?{" "}
+              DLF Auto Sales is your local used car dealership in Emporia KS —
+              hand-picked cars, trucks, and SUVs with fast auto financing and a
+              no-pressure buying experience.{" "}
               <strong className="font-semibold text-white">
-                We help you get approved.
+                Drive home today.
               </strong>
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Button href="#inventory" size="lg" className="w-full sm:w-auto">
+              <Button href={ROUTES.inventory} size="lg" className="w-full sm:w-auto">
                 View Inventory
               </Button>
-              <Button href="#financing" variant="outline" size="lg" className="w-full sm:w-auto">
+              <Button
+                href={ROUTES.financingApplication}
+                variant="outline"
+                size="lg"
+                className="w-full sm:w-auto"
+              >
                 Get Approved
               </Button>
             </div>
@@ -92,7 +88,7 @@ export function Hero() {
                   </li>
                 ))}
               </ul>
-              <Button href="#financing" size="sm" className="mt-5 w-full">
+              <Button href={ROUTES.financingApplication} size="sm" className="mt-5 w-full">
                 Check Your Approval
               </Button>
             </div>
